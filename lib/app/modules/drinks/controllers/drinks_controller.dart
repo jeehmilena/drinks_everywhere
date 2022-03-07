@@ -1,4 +1,6 @@
 import 'package:drinks_everywhere/app/modules/drinks/repository/drinks_repository.dart';
+import 'package:drinks_everywhere/app/routes/app_pages.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 class DrinksController extends GetxController {
@@ -7,6 +9,8 @@ class DrinksController extends GetxController {
 
   final DrinksRepository _repository = Get.find();
 
+  final showDrink = false.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -14,8 +18,12 @@ class DrinksController extends GetxController {
 
   @override
   void onReady() {
-    getDrinksRandom();
     super.onReady();
+  }
+
+  Future<void> exitToApp() async {
+    await FirebaseAuth.instance.signOut();
+    Get.toNamed(Routes.LOGIN);
   }
 
   Future<void> getDrinksRandom() async {

@@ -25,7 +25,7 @@ class RegisterView extends GetView<RegisterController> {
 
   Widget _title(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 8, bottom: 16, top: 32),
+      padding: const EdgeInsets.only(left: 8, bottom: 16, top: 32),
       child: SizedBox(
         width: Get.width,
         child: Text(
@@ -43,7 +43,7 @@ class RegisterView extends GetView<RegisterController> {
     return Expanded(
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(left: 24, right: 20),
+          padding: const EdgeInsets.only(left: 24, right: 20),
           child: SizedBox(
             height: Get.height,
             child: Column(

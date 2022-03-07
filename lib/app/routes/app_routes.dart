@@ -6,7 +6,6 @@ abstract class Routes {
   static const LOGIN = _Paths.LOGIN;
   static const REGISTER = _Paths.REGISTER;
   static const DRINKS = _Paths.DRINKS;
-  static const DRINK_DETAIL = _Paths.DRINK_DETAIL;
   static const SPLASH = _Paths.SPLASH;
 }
 
@@ -15,6 +14,5 @@ abstract class _Paths {
   static const LOGIN = '/login';
   static const REGISTER = '/register';
   static const DRINKS = '/drinks';
-  static const DRINK_DETAIL = '/drink-detail';
   static const SPLASH = '/splash';
 }

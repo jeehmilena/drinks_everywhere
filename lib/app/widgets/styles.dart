@@ -14,10 +14,10 @@ Color progressErrorColor = const Color(0xffFA8B19);
 Color successColor = const Color(0xff8BC34A);
 Color errorColor = const Color(0xffE57373);
 
-TextStyle titleStyle = TextStyle(
+TextStyle titleStyle = const TextStyle(
   fontFamily: 'Roboto-Bold',
   fontSize: 31.25,
-  color: const Color(0xfff1592a),
+  color: Color(0xfff1592a),
   fontWeight: FontWeight.w700,
   height: 1.359,
 );
@@ -25,6 +25,13 @@ TextStyle titleStyle = TextStyle(
 TextStyle textRegularMedium = TextStyle(
   fontSize: 16,
   color: colorTextPrimary,
+  fontWeight: FontWeight.w500,
+  height: 1.0,
+);
+
+TextStyle textTitleRegular = const TextStyle(
+  fontSize: 24,
+  color: Color(0xfff1592a),
   fontWeight: FontWeight.w500,
   height: 1.0,
 );

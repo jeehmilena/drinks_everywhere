@@ -11,10 +11,6 @@ import '../controllers/login_controller.dart';
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
 
-  static const Key emailKey = Key('emailKey');
-  static const Key passwordKey = Key('passwordKey');
-  static const Key loginButtonKey = Key('loginButtonKey');
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +82,6 @@ class LoginView extends GetView<LoginController> {
   Widget _emailField() {
     return Obx(() {
       return EditTextWidget(
-        key: emailKey,
         controller: controller.emailController,
         errorMessage: controller.emailError.value,
         showValidated: controller.emailValidation.value,
@@ -106,14 +101,12 @@ class LoginView extends GetView<LoginController> {
       return Padding(
         padding: const EdgeInsets.only(top: 20),
         child: EditTextWidget(
-          key: passwordKey,
           controller: controller.passwordController,
           errorMessage: controller.passwordError.value,
           obscureText: true,
           labelText: "Password",
           onChanged: (value) {
-            // controller.passwordError.value = '';
-            // controller.password.value = value;
+            controller.passwordError.value = '';
           },
         ),
       );
@@ -123,7 +116,6 @@ class LoginView extends GetView<LoginController> {
   Widget _loginButtonSubmit(BuildContext context) {
     return Obx(() {
       return ButtonLoading(
-          key: loginButtonKey,
           text: 'LOG IN',
           loading: controller.loading.value,
           onPressed: () async {
