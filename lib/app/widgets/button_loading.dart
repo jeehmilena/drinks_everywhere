@@ -53,19 +53,18 @@ class ButtonLoading extends StatelessWidget {
           onTap: loading ? () {} : onPressed,
           child: Container(
             alignment: Alignment.center,
-            decoration: decoration != null
-                ? decoration
-                : BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    gradient: LinearGradient(
-                      begin: Alignment(-1.0, -1.0),
-                      end: Alignment(1.0, 1.0),
-                      colors: onPressed != null
-                          ? [const Color(0xff03a9f4), const Color(0xff4dd0e1)]
-                          : [const Color(0xff999999), const Color(0xe4999999)],
-                      stops: [0.0, 1.0],
-                    ),
+            decoration: decoration ??
+                BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  gradient: LinearGradient(
+                    begin: const Alignment(-1.0, -1.0),
+                    end: const Alignment(1.0, 1.0),
+                    colors: onPressed != null
+                        ? [const Color(0xfff1592a), const Color(0xffe75c37)]
+                        : [const Color(0xff999999), const Color(0xe4999999)],
+                    stops: const [0.0, 1.0],
                   ),
+                ),
             child: Text(
               text.toString(),
               style: buttonTextStyle,
@@ -83,7 +82,7 @@ class ButtonLoading extends StatelessWidget {
     return Container(
       height: 55,
       decoration: BoxDecoration(
-          color: Get.theme.primaryColor,
+          color: const Color(0xfff1592a),
           borderRadius: BorderRadius.circular(48)),
       child: const Center(
           child: CircularProgressIndicator(

@@ -1,20 +1,24 @@
+import 'package:drinks_everywhere/app/routes/app_pages.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class SplashController extends GetxController {
-  //TODO: Implement SplashController
+  Future<void> loginWithEmail() async {
+    final storageEmail = GetStorage().read<String?>("EMAIL");
+    final storagePassword = GetStorage().read<String?>("PASSWORD");
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(
+            email: "$storageEmail", password: "$storagePassword")
+        .then((user) {
+      if (user.credential != null) {
+        Get.offAndToNamed(Routes.DRINKS);
+      } else {
+        Get.offAndToNamed(Routes.LOGIN);
+      }
+    }).catchError((onError) {
+      Get.offAndToNamed(Routes.LOGIN);
+    });
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }

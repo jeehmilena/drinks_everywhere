@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1062782348588",
+    "project_id": "drinkseverywhere-c8336",
+    "storage_bucket": "drinkseverywhere-c8336.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062782348588:android:653e569f9a805fb98e5089",
+        "android_client_info": {
+          "package_name": "com.example.drinks_everywhere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062782348588-3eg1qn0fjelm237rkjhf6v24bb9bc50m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.drinks_everywhere",
+            "certificate_hash": "e00c0d8f5c4f63d4e8695ce958a1e0f94544b469"
+          }
+        },
+        {
+          "client_id": "1062782348588-lpaf0h0baaqcdspv16nfpmsgcl126agr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBouTCjlhvjwV6kiycjsXeMX-rgpzHVE2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062782348588-lpaf0h0baaqcdspv16nfpmsgcl126agr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1062782348588-u44efur74ai19kik6j8rg1gtmva6pdp0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.drinksEverywhere"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

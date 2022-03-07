@@ -84,50 +84,54 @@ class LoginView extends GetView<LoginController> {
   }
 
   Widget _emailField() {
-    return EditTextWidget(
-      key: emailKey,
-      // controller: controller.emailController,
-      // errorMessage: controller.emailError.value,
-      // showValidated: controller.emailValidation.value,
-      onChanged: (value) {
-        // controller.emailError.value = '';
-        // controller.email.value = value;
-        // controller.emailValidation.value =
-        //     controller.emailController.text.isEmail;
-      },
-      keyboardType: TextInputType.emailAddress,
-      labelText: "Email",
-    );
+    return Obx(() {
+      return EditTextWidget(
+        key: emailKey,
+        controller: controller.emailController,
+        errorMessage: controller.emailError.value,
+        showValidated: controller.emailValidation.value,
+        onChanged: (value) {
+          controller.emailError.value = '';
+          controller.emailValidation.value =
+              controller.emailController.text.isEmail;
+        },
+        keyboardType: TextInputType.emailAddress,
+        labelText: "Email",
+      );
+    });
   }
 
   Widget _passwordField() {
-    return Padding(
-      padding: EdgeInsets.only(top: 20),
-      child: EditTextWidget(
-        key: passwordKey,
-        // controller: controller.passwordController,
-        // errorMessage: controller.passwordError.value,
-        obscureText: true,
-        labelText: "Password",
-        onChanged: (value) {
-          // controller.passwordError.value = '';
-          // controller.password.value = value;
-        },
-      ),
-    );
+    return Obx(() {
+      return Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: EditTextWidget(
+          key: passwordKey,
+          controller: controller.passwordController,
+          errorMessage: controller.passwordError.value,
+          obscureText: true,
+          labelText: "Password",
+          onChanged: (value) {
+            // controller.passwordError.value = '';
+            // controller.password.value = value;
+          },
+        ),
+      );
+    });
   }
 
   Widget _loginButtonSubmit(BuildContext context) {
-    return ButtonLoading(
-        key: loginButtonKey,
-        text: 'LOG IN',
-        loading: false,
-        //loading: controller.loading.value,
-        onPressed: () async {
-          FocusScope.of(context).requestFocus(FocusNode());
-          // controller.login(controller.emailController.text,
-          //     controller.passwordController.text);
-        });
+    return Obx(() {
+      return ButtonLoading(
+          key: loginButtonKey,
+          text: 'LOG IN',
+          loading: controller.loading.value,
+          onPressed: () async {
+            FocusScope.of(context).requestFocus(FocusNode());
+            controller.loginWithEmail(controller.emailController.text,
+                controller.passwordController.text);
+          });
+    });
   }
 
   Widget _signUpText() {
@@ -141,12 +145,12 @@ class LoginView extends GetView<LoginController> {
             fit: BoxFit.fill,
           ),
         ),
-        Text(
+        const Text(
           '  Don’t have an account yet?  ',
           style: TextStyle(
             fontFamily: 'Roboto',
             fontSize: 14,
-            color: const Color(0xff666666),
+            color: Color(0xff666666),
             fontWeight: FontWeight.w500,
             height: 1.0714285714285714,
           ),
@@ -173,7 +177,7 @@ class LoginView extends GetView<LoginController> {
       },
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
-        color: const Color(0xff002f6c),
+        color: const Color(0xff7ed321),
       ),
     );
   }

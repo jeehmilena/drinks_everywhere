@@ -17,10 +17,14 @@ class DrinksView extends GetView<DrinksController> {
           Get.toNamed(Routes.DRINK_DETAIL);
         },
         child: Center(
-          child: Text(
-            'DrinksView is working',
-            style: TextStyle(fontSize: 20),
-          ),
+          child: Obx(() {
+            if (controller.loading.value) return CircularProgressIndicator();
+
+            return Text(
+              '${controller.drinksResponse["drinks"]?[0]?["strDrink"] ?? ''}',
+              style: TextStyle(fontSize: 20),
+            );
+          }),
         ),
       ),
     );
