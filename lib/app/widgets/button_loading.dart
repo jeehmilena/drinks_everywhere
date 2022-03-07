@@ -60,7 +60,7 @@ class ButtonLoading extends StatelessWidget {
                     begin: const Alignment(-1.0, -1.0),
                     end: const Alignment(1.0, 1.0),
                     colors: onPressed != null
-                        ? [const Color(0xfff1592a), const Color(0xffe75c37)]
+                        ? [const Color(0xffff314f), const Color(0xffe75c37)]
                         : [const Color(0xff999999), const Color(0xe4999999)],
                     stops: const [0.0, 1.0],
                   ),
@@ -82,7 +82,7 @@ class ButtonLoading extends StatelessWidget {
     return Container(
       height: 55,
       decoration: BoxDecoration(
-          color: const Color(0xfff1592a),
+          color: const Color(0xffff314f),
           borderRadius: BorderRadius.circular(48)),
       child: const Center(
           child: CircularProgressIndicator(

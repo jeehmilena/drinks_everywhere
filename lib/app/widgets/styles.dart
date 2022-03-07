@@ -17,7 +17,7 @@ Color errorColor = const Color(0xffE57373);
 TextStyle titleStyle = const TextStyle(
   fontFamily: 'Roboto-Bold',
   fontSize: 31.25,
-  color: Color(0xfff1592a),
+  color: Color(0xffff314f),
   fontWeight: FontWeight.w700,
   height: 1.359,
 );
@@ -31,7 +31,7 @@ TextStyle textRegularMedium = TextStyle(
 
 TextStyle textTitleRegular = const TextStyle(
   fontSize: 24,
-  color: Color(0xfff1592a),
+  color: Color(0xffff314f),
   fontWeight: FontWeight.w500,
   height: 1.0,
 );

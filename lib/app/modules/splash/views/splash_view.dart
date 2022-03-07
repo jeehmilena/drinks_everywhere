@@ -22,7 +22,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 241, 89, 42),
+      backgroundColor: const Color.fromARGB(255, 255, 49, 79),
       body: Center(
         child: Image.asset(
           'assets/images/drink_icon.png',

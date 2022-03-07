@@ -24,7 +24,7 @@ class DrinksView extends GetView<DrinksController> {
     return AppBar(
       title: const Text('Drinks'),
       centerTitle: true,
-      backgroundColor: const Color(0xfff1592a),
+      backgroundColor: const Color(0xffff314f),
       actions: <Widget>[
         IconButton(
           icon: const Icon(
