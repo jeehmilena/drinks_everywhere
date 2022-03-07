@@ -36,6 +36,13 @@ TextStyle textTitleRegular = const TextStyle(
   height: 1.0,
 );
 
+TextStyle textTitleRegularWhite = const TextStyle(
+  fontSize: 24,
+  color: Colors.white,
+  fontWeight: FontWeight.w500,
+  height: 1.0,
+);
+
 TextStyle buttonTextStyle = TextStyle(
   fontFamily: 'Roboto-Bold',
   fontSize: 19,

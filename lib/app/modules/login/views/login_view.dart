@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../../../core/constants.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -17,9 +18,24 @@ class LoginView extends GetView<LoginController> {
       body: SafeArea(
         child: Column(
           children: [
+            _logo(),
             _title(context),
             _body(context),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _logo() {
+    return Hero(
+      tag: 'logo',
+      child: Padding(
+        padding: EdgeInsets.only(top: 16),
+        child: Image.asset(
+          primaryLogo,
+          height: 100,
+          width: 100,
         ),
       ),
     );
@@ -45,32 +61,17 @@ class LoginView extends GetView<LoginController> {
     return Expanded(
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(left: 24, right: 24, bottom: 16),
+          padding: const EdgeInsets.only(left: 24, right: 20),
           child: SizedBox(
             height: Get.height,
             child: Column(
               children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      _emailField(),
-                      _passwordField(),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      _loginButtonSubmit(context),
-                      const SizedBox(height: 20),
-                      _signUpText(),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      _signUpButtonSubmit(context),
-                    ],
-                  ),
-                )
+                _emailField(),
+                _passwordField(),
+                const SizedBox(height: 48),
+                _loginButtonSubmit(context),
+                _signUpText(),
+                _signUpButtonSubmit(context)
               ],
             ),
           ),

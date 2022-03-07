@@ -119,9 +119,9 @@ class _EditTextWidgetState extends State<EditTextWidget> {
           });
     } else {
       if (widget.showValidated == true) {
-        return Icon(
+        return const Icon(
           FontAwesomeIcons.check,
-          color: const Color(0xff7ed321),
+          color: Color(0xffff314f),
           size: 16,
         );
       }

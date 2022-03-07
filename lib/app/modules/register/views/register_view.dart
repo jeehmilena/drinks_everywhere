@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../../../core/constants.dart';
 import '../controllers/register_controller.dart';
 
 class RegisterView extends GetView<RegisterController> {
@@ -15,9 +16,24 @@ class RegisterView extends GetView<RegisterController> {
       body: SafeArea(
         child: Column(
           children: [
+            _logo(),
             _title(context),
             _body(context),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _logo() {
+    return Hero(
+      tag: 'logo',
+      child: Padding(
+        padding: EdgeInsets.only(top: 16),
+        child: Image.asset(
+          primaryLogo,
+          height: 100,
+          width: 100,
         ),
       ),
     );
@@ -153,7 +169,7 @@ class RegisterView extends GetView<RegisterController> {
         },
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xfff1592a),
+          color: const Color(0xffff314f),
         ),
       );
     });

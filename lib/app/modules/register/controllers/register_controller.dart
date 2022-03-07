@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import '../../../core/constants.dart';
 import '../../../routes/app_pages.dart';
 import '../../../widgets/app_utils.dart';
 
@@ -61,8 +62,8 @@ class RegisterController extends GetxController {
     FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email, password: password)
         .then((response) {
-      GetStorage().write("EMAIL", email);
-      GetStorage().write("PASSWORD", password);
+      GetStorage().write(EMAIL_KEY, email);
+      GetStorage().write(PASSWORD_KEY, password);
 
       if (response.user != null) {
         Get.offAndToNamed(Routes.DRINKS);
