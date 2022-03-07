@@ -11,8 +11,8 @@ class SplashController extends GetxController {
     FirebaseAuth.instance
         .signInWithEmailAndPassword(
             email: "$storageEmail", password: "$storagePassword")
-        .then((user) {
-      if (user.credential != null) {
+        .then((response) {
+      if (response.user != null) {
         Get.offAndToNamed(Routes.DRINKS);
       } else {
         Get.offAndToNamed(Routes.LOGIN);
