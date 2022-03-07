@@ -61,9 +61,10 @@ class RegisterController extends GetxController {
     FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email, password: password)
         .then((response) {
+      GetStorage().write("EMAIL", email);
+      GetStorage().write("PASSWORD", password);
+
       if (response.user != null) {
-        GetStorage().write("EMAIL", email);
-        GetStorage().write("PASSWORD", password);
         Get.offAndToNamed(Routes.DRINKS);
       } else {
         Get.toNamed(Routes.REGISTER);
